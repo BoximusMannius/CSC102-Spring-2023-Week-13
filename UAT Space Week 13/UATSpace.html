@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- This UAT Space page was created by Jakob Davis, in CSC102 Spring 2023
+this is the the week 2 blastoff assignment-->
+<html>
+
+<head>
+    <!--Behold... the head, where all the behind the background stuff happens-->
+    <title>
+        UAT Space Page
+    </title>
+    <script src="code.js"></script>
+    <script src="dataLoader.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        var theTime = new Date();
+        var timeInterval = 5000;
+        var lastIteration = 0;
+        var running = true;
+        var index = 0;
+        var timer;
+        var data = getData();
+    </script>
+</head>
+
+<body>
+    <!--Main image for the website-->
+    <img src="UAT_Space.jpg">
+    <h1>
+        UAT Space Page
+    </h1>
+
+    <br>
+    <br>
+    <!--creates the table for the launch data-->
+    <table id="data" border="2" width="70%">
+        <col style="width: 35%">
+            <thead>
+                <th>Data Type</th>
+                <th>Reading</th>
+                <tr id="time_seconds"></tr>
+                <tr id="latitude"></tr>
+                <tr id="longitude"></tr>
+                <tr id="gps_altitude"></tr>
+                <tr id="bmpSensor_altitude"></tr>
+                <tr id="bmpSensor_pressure"></tr>
+                <tr id="bmpSensor_temperature"></tr>
+                <tr id="digSensor_temperature"></tr>
+                <tr id="cssSensor_temperature"></tr>
+                <tr id="cssSensor_eCO2"></tr>
+                <tr id="cssSensor_TVOC"></tr>
+                <tr id="UV"></tr>
+                <tr id="accelX"></tr>
+                <tr id="accelY"></tr>
+                <tr id="accelZ"></tr>
+                <tr id="magneticX"></tr>
+                <tr id="magneticY"></tr>
+                <tr id="magneticZ"></tr>
+                <tr id="gyroX"></tr>
+                <tr id="gyroY"></tr>
+                <tr id="gyroZ"></tr>
+            </thead>
+    </table>
+    <br>
+    <br>
+    <!--Displays the current time when the start button is pressed-->
+    The current Time is: <div id="clockTime"> Press start to display current time</div>
+    <br>
+    <br>
+    <div>Very important buttons</div>
+    <br>
+    <br>
+    <!-- starts the blastoffTimer function-->
+    <button class="button" id="startButton" onclick="startFun();">Start</button>
+    <button class="button" id="stopButton" onclick="stopFun();">Stop</button>
+    <br>
+    <br>
+    <!--sets the Blastoff Timer text to red-->
+    <h2 style="color: red;">Blastoff Timer</h2>
+    <div id="blastoffDis">Press Start to begin blastoff timer</div>
+    <br>
+    <div id="blastoffWarning"></div>
+    <!-- starts the blastoffTimer function-->
+    <button class="button" id="blastoffStartButton" onclick="betterBlastoffTimer();">Start</button>
+    <button class="button" id="blastoffStopButton">Stop</button>
+    <br>
+    <br>
+    <h2>Craps Game</h2>
+    <div id="die1Res">Die 1 result</div><br>
+    <div id="die2Res">Die 2 result</div><br>
+    <div id="diceSum">Sum of Die 1 and Die 2</div><br>
+    <div id="gameRes">Game Result</div><br>
+    <!--starts the playCraps function-->
+    <button class="button" onclick="playCraps()">Play Craps!</button><br>
+    <br>
+    wins<br>
+    <div id="winsRes">0</div><br>
+    <br>
+    losses<br>
+    <div id="lossesRes">0</div><br>
+    <br>
+    draws<br>
+    <div id="drawsRes">0</div><br>
+    <br>
+    <h2>Play Space Sounds</h2>
+    <!--button that activates the playStation function, which plays the us-lab-background.mp3 file-->
+    <button class="largerButton" onclick="playStation();">Play Space Station Sounds</button>
+</body>
+
+</html>
+
+
+<!--
+
+        sets the Blastoff Timer text to red
+        <h2 style="color: red;">Blastoff Timer</h2>
+        <div id="blastoffDis">Press Start to begin blastoff timer</div>
+        <br>
+        <div id="blastoffWarning"></div>
+-->
